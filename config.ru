@@ -1,5 +1,5 @@
 require 'bundler'
 Bundler.require :default
 
-require './app/app.rb'
+Dir['./app/**/*.rb'].each { |file| require File.join(File.dirname(__FILE__), file) }
 run Sinatra::Application
